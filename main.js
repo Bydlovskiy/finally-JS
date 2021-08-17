@@ -135,8 +135,7 @@ $(document).ready(function () {
     $('[name=closeSignBlock]').click(() => {
         $('[name=signInContainer]').fadeOut(500)
         $('.SignForm').get(0).reset();
-        $('[name=loginUser]').removeClass('is-valid is-invalid')
-        $('[name=passwordUser]').removeClass('is-valid is-invalid')
+        $('[name=loginUser],[name=passwordUser]').removeClass('is-invalid')
         $('.wrongLog').hide()
     })
 
@@ -212,10 +211,12 @@ $(document).ready(function () {
         $('[name=tableContainer]').fadeIn(500)
     })
     $('[name=closeTableBlock]').click(() => {
-        $('[name=tableContainer]').fadeOut(500)
+        $('[name=tableContainer]').fadeOut(500);
+        $('[name=countTr],[name=countTd],[name=widthOfTd],[name=heightOfTd],[name=borderWidth],[name=borderStyle],[name=borerColor]').removeClass('is-invalid')
     })
     $('[name=tableReset]').click(() => {
         $('form[name=tableForm]').get(0).reset();
+        $('[name=countTr],[name=countTd],[name=widthOfTd],[name=heightOfTd],[name=borderWidth],[name=borderStyle],[name=borerColor]').removeClass('is-invalid')
     })
     let tableInputs = /^\d+$/;
     let tableBorder = /^[a-zA-Z]+$/
@@ -303,11 +304,11 @@ $(document).ready(function () {
         $('[name=olListContainer]').fadeIn(500)
     })
     $('[name=closeOlListBlock]').click(() => {
-        $('[name=olListContainer]').fadeOut(500)
+        $('[name=olListContainer]').fadeOut(500);
+        $('[name=countLiOl],[name=OlListStyle]').removeClass('is-invalid')
     })
     $('button[name=olListReset]').click(() => {
-        $('[name=countLiOl]').removeClass('is-invalid');
-        $('[name=OlListStyle]').removeClass('is-invalid');
+        $('[name=countLiOl],[name=OlListStyle]').removeClass('is-invalid')
         $('form[name=olList]').get(0).reset()
     })
     $('button[name=olListCreate]').click(() => {
@@ -374,10 +375,12 @@ $(document).ready(function () {
         $('[name=UlListContainer]').fadeIn(500)
     })
     $('[name=closeUlListBlock]').click(() => {
-        $('[name=UlListContainer]').fadeOut(500)
+        $('[name=UlListContainer]').fadeOut(500);
+        $('[name=countLiUl],[name=UlListStyle]').removeClass('is-invali')
     })
     $('button[name=UlListReset]').click(() => {
-        $('form[name=UlList]').get(0).reset()
+        $('form[name=UlList]').get(0).reset();
+        $('[name=countLiUl],[name=UlListStyle]').removeClass('is-invali');
     })
     $('button[name=UlListCreate]').click(() => {
         if (ulBlockValid()) {
